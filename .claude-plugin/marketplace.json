@@ -1,0 +1,11 @@
+{
+    "name": "sp-marketplace",
+    "owner": { "name": "Peter Sallay" },
+    "plugins": [
+        {
+            "name": "qa-kit",
+            "source": "./", 
+            "description": "A Claude Code plugin that helps you review and summarise code changes before shipping"
+        }
+    ]
+}
