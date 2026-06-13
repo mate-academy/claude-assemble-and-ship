@@ -1,6 +1,6 @@
 {
     "name": "sp-marketplace",
-    "owner": "0.1.0",
+    "owner": "Peter Sallay",
     "plugins": [
         {
             "name": "qa-kit",
