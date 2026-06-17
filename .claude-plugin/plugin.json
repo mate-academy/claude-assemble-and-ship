@@ -1,0 +1,5 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "A small QA toolkit: summarise branch changes and review recent code."
+}
