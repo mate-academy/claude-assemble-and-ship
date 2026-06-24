@@ -26,7 +26,9 @@ for (const dir of ['commands', 'agents', 'skills', 'hooks']) {
 
 // 3. At least one component at the root.
 const hasComponent = ['commands', 'agents', 'skills', 'hooks'].some(
-  (dir) => fs.existsSync(dir) && fs.readdirSync(dir).length > 0
+  (dir) =>
+    fs.existsSync(dir) &&
+    fs.readdirSync(dir).filter((f) => f.endsWith('.md') && !f.startsWith('.')).length > 0
 );
 if (!hasComponent) {
   errors.push('No components found — add at least one (commands/ or agents/) at the repo root.');
