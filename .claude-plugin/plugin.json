@@ -1,0 +1,5 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "Quality-assurance helpers: summarize branch changes and review recent code."
+}

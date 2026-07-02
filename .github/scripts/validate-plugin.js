@@ -12,7 +12,7 @@ if (!fs.existsSync(manifestPath)) {
   } catch (e) {
     errors.push('.claude-plugin/plugin.json is not valid JSON: ' + e.message);
   }
-  if (manifest && (!manifest.name || typeof manifest.name !== 'string')) {
+  if (manifest !== undefined && (typeof manifest !== 'object' || manifest === null || !manifest.name || typeof manifest.name !== 'string')) {
     errors.push('plugin.json must include a non-empty "name".');
   }
 }
@@ -26,7 +26,7 @@ for (const dir of ['commands', 'agents', 'skills', 'hooks']) {
 
 // 3. At least one component at the root.
 const hasComponent = ['commands', 'agents', 'skills', 'hooks'].some(
-  (dir) => fs.existsSync(dir) && fs.readdirSync(dir).length > 0
+  (dir) => fs.existsSync(dir) && fs.statSync(dir).isDirectory() && fs.readdirSync(dir).length > 0
 );
 if (!hasComponent) {
   errors.push('No components found — add at least one (commands/ or agents/) at the repo root.');
