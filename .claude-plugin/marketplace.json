@@ -1,0 +1,15 @@
+{
+  "name": "qa-kit-marketplace",
+  "description": "Marketplace for the qa-kit plugin: change summaries and code review for Claude Code.",
+  "owner": {
+    "name": "tuitioner"
+  },
+  "plugins": [
+    {
+      "name": "qa-kit",
+      "source": "./",
+      "description": "Summarise branch changes and review recent code with a slash command and a subagent.",
+      "version": "0.1.0"
+    }
+  ]
+}
