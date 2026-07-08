@@ -24,3 +24,5 @@ Run the slash command:
 Trigger the subagent by asking Claude to review your recent changes (e.g. "review my recent changes") — it will reach for `code-reviewer` automatically.
 
 After editing plugin files, reload with `/reload-plugins`.
+
+Fun fact: this plugin was assembled from two ready-made components.
