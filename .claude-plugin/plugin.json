@@ -1,0 +1,9 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "Tools for summarizing changes and reviewing code.",
+  "skills": "./skills/",
+  "agents": [
+    "./agents/code-reviewer.md"
+  ]
+}
