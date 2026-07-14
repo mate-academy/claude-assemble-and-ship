@@ -1,0 +1,7 @@
+{
+  "name": "my-tools",
+  "owner": { "name": "Frank Mamone" },
+  "plugins": [
+              { "name": "qa-kit", "source": "./", "description": "QA helpers for reviewing and describing branch changes: a summarize-changes command and a code-reviewer agent." }
+             ]
+}
