@@ -1,0 +1,5 @@
+{
+  "name": "building-blocks",
+  "version": "0.1.0",
+  "description": "Adds a branch-summary command and a code-review subagent to Claude Code."
+}
