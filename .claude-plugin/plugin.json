@@ -1,0 +1,6 @@
+{"name": "code-reviewer", 
+"version": "0.1.0", 
+"author": "Stefano Garzon", 
+"description": "runs a code-reviewer agent and summarizes the changes made to the code",
+"agents": "${CLAUDE_ROOT_PATH}/agents/code-reviewer.md",
+"commands": "${CLAUDE_ROOT_PATH}/commands/summarize-changes.md"}
