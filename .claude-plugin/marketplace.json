@@ -1,0 +1,7 @@
+{
+  "name": "franks-tools",
+  "owner": { "name": "Frank Kappe" },
+  "plugins": [
+              { "name": "qa-kit", "source": "./", "description": "Command and agent for reviewing a change before committing." }
+             ]
+}
