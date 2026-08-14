@@ -1,0 +1,8 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "Summarize branch changes and review recent code for bugs and unclear names.",
+  "author": {
+    "name": "Roman Azhniuk"
+  }
+}
