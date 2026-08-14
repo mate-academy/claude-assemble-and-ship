@@ -1,0 +1,13 @@
+{
+  "name": "my-tools",
+  "owner": {
+    "name": "Roman"
+  },
+  "plugins": [
+    {
+      "name": "review-toolkit",
+      "source": "./",
+      "description": "Summarize branch changes for a PR and get an automatic code review after edits."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "name": "review-toolkit",
+  "version": "0.1.0",
+  "description": "Summarize branch changes for a PR and get an automatic code review after edits."
+}
