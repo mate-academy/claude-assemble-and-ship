@@ -1,6 +1,6 @@
 ---
 name: code-reviewer
-description: Reviews changed code for bugs and unclear names. Use right after writing or editing code.
+description: Reviews changed code for bugs and unclear names. Use when you were asked to review the code, right after writing or editing code.
 tools: Read, Grep, Glob
 model: sonnet
 ---

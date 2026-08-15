@@ -1,0 +1,5 @@
+{
+  "name": "assemble-and-ship",
+  "description": "Review your changes for bugs and unclear naming, then generate a concise PR-ready summary — everything you need to wrap up a coding session and ship it.",
+  "version": "0.1.0"
+}
