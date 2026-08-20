@@ -1,0 +1,5 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "A Claude Code plugin that bundles a PR-summary command and a code-review subagent."
+}
