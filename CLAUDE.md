@@ -21,10 +21,7 @@ The one rule that trips people up: component folders (`commands/`, `agents/`, `s
 
 ## Current state
 
-- `agents/code-reviewer.md` and `commands/summarize-changes.md` are in place at the root.
-- `.claude-plugin/plugin.json` does **not exist yet** — this is the remaining blocker for a passing validation check.
-- The old `building-blocks/` source folder has been emptied and should be removed from git (`git add -u` / `git rm`) once the manifest is added.
-- `README.md` still contains the lesson instructions and needs to be replaced with a description of the actual plugin once it's assembled.
+The plugin is fully assembled: `agents/code-reviewer.md` and `commands/summarize-changes.md` sit at the root, `.claude-plugin/plugin.json` defines `name: "qa-kit"`, `building-blocks/` is gone, and `README.md` describes the actual plugin. Validation passes and both components have been tested locally (see below).
 
 ## Validating the plugin
 
@@ -50,7 +47,7 @@ From the repo root:
 claude --plugin-dir .
 ```
 
-- Invoke the slash command as `/your-plugin:summarize-changes` (namespaced by the plugin's `name` in `plugin.json`).
+- Invoke the slash command as `/qa-kit:summarize-changes` (namespaced by the plugin's `name` in `plugin.json`).
 - Trigger the subagent by asking Claude to review recent changes — it should be picked up automatically based on `agents/code-reviewer.md`'s `description`.
 - After editing any component file, run `/reload-plugins` inside the session rather than restarting.
 
