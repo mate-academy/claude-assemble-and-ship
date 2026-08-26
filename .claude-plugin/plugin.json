@@ -1,0 +1,11 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "QA workflow tools including code review and change summarization",
+  "commands": [
+    "summarize-changes"
+  ],
+  "agents": [
+    "code-reviewer"
+  ]
+}
