@@ -1,0 +1,8 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "Reviews code changes and summarizes what changed on a branch.",
+  "author": {
+    "name": "Denys Shy"
+  }
+}
