@@ -1,0 +1,13 @@
+{
+  "name": "marketplace",
+  "owner": {
+    "name": "Felipe DY"
+  },
+  "plugins": [
+    {
+      "name": "qa-kit",
+      "source": "./",
+      "description": "Summarize branch changes and review code for bugs and unclear names."
+    }
+  ]
+}
