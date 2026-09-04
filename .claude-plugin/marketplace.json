@@ -1,0 +1,13 @@
+{
+  "name": "qa-kit-marketplace",
+  "owner": {
+    "name": "Rodrigo Frams"
+  },
+  "plugins": [
+    {
+      "name": "qa-kit",
+      "source": "./",
+      "description": "Review and summarize changes before opening a pull request."
+    }
+  ]
+}
