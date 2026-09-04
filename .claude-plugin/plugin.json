@@ -1,0 +1,5 @@
+{
+  "name": "pr-prep-kit",
+  "version": "0.1.0",
+  "description": "Summarize what changed on a branch and get a focused code review before opening a PR."
+}
