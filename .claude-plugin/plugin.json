@@ -1,0 +1,8 @@
+{
+  "name": "plugin_mate",
+  "version": "0.1.0",
+  "description": "Helps to check a branch before opening a pull request: summarises the changes and reviews them.",
+  "author": {
+    "name": "volodymyrlp"
+  }
+}
