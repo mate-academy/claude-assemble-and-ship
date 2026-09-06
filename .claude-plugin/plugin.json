@@ -1,0 +1,8 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "Herramientas rapidas de QA: resumen de cambios y revision de codigo.",
+  "author": {
+    "name": "ktroch"
+  }
+}
