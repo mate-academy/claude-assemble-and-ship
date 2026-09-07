@@ -1,4 +1,4 @@
-## custom-plugin
+## custom-tools
 
 A Claude Code plugin that bundles a PR-summary command and a code-review subagent.
 
@@ -17,7 +17,7 @@ A Claude Code plugin that bundles a PR-summary command and a code-review subagen
 
 ### Commands
 
-#### `/custom-plugin:summarize-changes`
+#### `/custom-tools:summarize-changes`
 
 Summarises the changes on the current branch: lists each touched file with a
 one-line description of what changed, formatted to drop straight into a
@@ -26,7 +26,7 @@ pull-request description.
 **Usage:**
 
 ```
-/custom-plugin:summarize-changes
+/custom-tools:summarize-changes
 ```
 
 ### Agents
@@ -55,6 +55,6 @@ From the repo root:
 claude --plugin-dir .
 ```
 
-Run the command with its namespaced name (`/custom-plugin:summarize-changes`),
+Run the command with its namespaced name (`/custom-tools:summarize-changes`),
 and trigger the subagent by asking Claude to review your recent changes. Use
 `/reload-plugins` after making edits to pick up changes without restarting.

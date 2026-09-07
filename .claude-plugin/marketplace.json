@@ -1,0 +1,15 @@
+{
+  "name": "my-team-marketplace",
+  "owner": { "name": "Maryna team" },
+  "metadata": {
+    "description": "Shared plugins for Claude Code for our team",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "custom-tools ",
+      "source": "./",
+      "description": "Shared commands and agents for our team"
+    }
+  ]
+}
