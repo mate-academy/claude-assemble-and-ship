@@ -1,0 +1,12 @@
+{
+    "name": "Test marketplace",
+    "owner": "Gina H",
+    "plugins": [
+        {
+            "name": "qa-kit",
+            "source": "./",
+            "description": "Contains a code review agent (Sonnet) and a summarize changes slash command. Built to test marketplace feature."
+        }
+    ]
+
+}
