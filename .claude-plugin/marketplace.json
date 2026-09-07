@@ -7,7 +7,7 @@
   },
   "plugins": [
     {
-      "name": "custom-tools ",
+      "name": "custom-tools",
       "source": "./",
       "description": "Shared commands and agents for our team"
     }

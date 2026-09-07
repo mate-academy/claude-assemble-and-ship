@@ -1,1 +1,6 @@
-{ "name": "custom-tools", "version": "0.1.0" }
+{
+  "name": "custom-tools",
+  "version": "0.1.0",
+  "description": "Shared commands and agents for our team",
+  "author": { "name": "Maryna team" }
+}
