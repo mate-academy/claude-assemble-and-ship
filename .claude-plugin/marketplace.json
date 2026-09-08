@@ -1,0 +1,13 @@
+{
+    "name": "my-tools",
+    "owner": {
+        "name": "SernaDesigns"
+    },
+    "plugins": [
+        {
+            "name": "qa-kit",
+            "source": "./",
+            "description": "Commands and agents for reviewing and summarizing changes."
+        }
+    ]
+}
