@@ -1,47 +1,67 @@
-## Build your first plugin
- 
-This is your workspace for the **Unit 9, Lesson 3** task: assemble a couple of components into a working Claude Code plugin and test it locally.
- 
-### What's in here
- 
-Two ready-made components live in `building-blocks/`:
- 
-- `summarize-changes.md` — a slash command that summarises what changed on a branch
-- `code-reviewer.md` — a subagent that reviews recent changes
-Your job is to organise them into a proper plugin. (Made your own command or subagent earlier in the course? Use those instead — the steps are the same.)
- 
-### Target structure
- 
+# Pre-commit Plugin
+
+A Claude Code plugin that provides essential tools for pre-commit checks, helping you review and summarize your changes before committing.
+
+## What it does
+
+This plugin adds two useful tools to your Claude Code workflow:
+- **Code review subagent**: Automatically reviews your recent changes for bugs and unclear naming
+- **Change summarization command**: Generates a concise summary of your branch changes suitable for pull request descriptions
+
+## Components
+
+### 1. Code Reviewer Subagent (`/pre-commit:code-reviewer`)
+Reviews changed code for bugs and unclear names. Best used right after writing or editing code.
+
+**How to use**: Ask Claude to "review my recent changes" or "check for bugs in my code" - it will automatically invoke the code-reviewer subagent.
+
+**What it checks**:
+- Potential bugs in modified code
+- Missing error handling
+- Unclear or confusing variable/function names
+- Returns a short list grouped by severity (high, medium, low)
+
+### 2. Summarize Changes Command (`/pre-commit:summarize-changes`)
+Lists each file that was touched and gives a one-line description of what changed. Output is kept short enough to paste directly into a pull request description.
+
+**How to use**: Type `/pre-commit:summarize-changes` in your conversation with Claude.
+
+**Output example**:
+```
+- src/auth/login.js: Added JWT token validation middleware
+- src/components/Button.tsx: Fixed accessibility issue with color contrast
+- README.md: Updated installation instructions
+```
+
+## Installation & Usage
+
+1. **Load the plugin**: From the repository root, run:
+   ```
+   claude --plugin-dir .
+   ```
+
+2. **Use the command**: Type `/pre-commit:summarize-changes` to get a summary of your changes
+
+3. **Trigger the subagent**: Ask Claude to review your code (e.g., "Please review my recent changes")
+
+4. **Reload after edits**: If you modify any plugin files, use `/reload-plugins` to refresh
+
+## Plugin Structure
+
 ```
 .
 ├── .claude-plugin/
-│   └── plugin.json            # name + version (the manifest)
-├── commands/
-│   └── summarize-changes.md
+│   └── plugin.json          # Plugin manifest (name: pre-commit, version: 0.1.0)
 ├── agents/
-│   └── code-reviewer.md
-└── README.md                  # what your plugin does
+│   └── code-reviewer.md     # Code review subagent definition
+├── commands/
+│   └── summarize-changes.md # Change summarization command
+└── README.md                # This file
 ```
- 
-Remember the one rule that trips people up: **only `plugin.json` goes inside `.claude-plugin/`** — the component folders sit at the root.
- 
-### Steps
- 
-1. Create `.claude-plugin/plugin.json` with a `name` and a `version`. A minimal one looks like:
-```json
-   { "name": "qa-kit", "version": "0.1.0" }
-```
-2. Make the component folders and move the pieces into place: `building-blocks/summarize-changes.md` → `commands/`, and `building-blocks/code-reviewer.md` → `agents/`. Delete the empty `building-blocks/` folder afterwards.
-3. If a component runs a bundled script, reference it through `${CLAUDE_PLUGIN_ROOT}` — never a hardcoded path.
-4. Replace this README with one that describes *your* plugin: what it does, the commands it adds, how to use them.
-5. From the repo root, load it with `claude --plugin-dir .`. Run the command as `/your-plugin:summarize-changes`, and trigger the subagent by asking Claude to review your recent changes (it should reach for `code-reviewer`). Use `/reload-plugins` after edits.
-6. Commit and push.
 
-### How you'll know it's done
- 
-This repo has an automated check — **Validate plugin** — that runs every time you push. It's **red right now**, because there's no plugin yet. As you build, commit and push your work; the check turns **green** once the plugin is structured correctly:
- 
-- `.claude-plugin/plugin.json` exists, is valid JSON, and has a `name`
-- the component folders sit at the root, not inside `.claude-plugin/`
-- at least one component is present
-A green check means the structure is right. To confirm it actually *works*, load the plugin locally with `claude --plugin-dir .` and run each piece — the command by its namespaced name, the subagent by asking for a review.
+## Development Tips
+
+- The `plugin.json` file must remain in `.claude-plugin/` directory
+- Component folders (`agents/`, `commands/`) must be at the repository root (not inside `.claude-plugin/`)
+- After making changes to plugin components, use `/reload-plugins` to test updates
+- Commit and push your changes to see the automated validation pass
