@@ -1,0 +1,13 @@
+{
+  "name": "RAWEDGE",
+  "owner": {
+    "name": "Rory O'Sullivan"
+  },
+  "plugins": [
+    {
+      "name": "review-kit",
+      "source": "./",
+      "description": "Summarize branch changes and get an automated code review."
+    }
+  ]
+}
