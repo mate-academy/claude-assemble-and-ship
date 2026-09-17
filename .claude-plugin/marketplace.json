@@ -1,0 +1,7 @@
+{
+  "name": "my-tools",
+  "owner": { "name": "Balazs Radvanyi" },
+  "plugins": [
+    { "name": "qa-kit", "source": "./", "description": "Commands and agents summarizing changes and review code." }
+  ]
+}
