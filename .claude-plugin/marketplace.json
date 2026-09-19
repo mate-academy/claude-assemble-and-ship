@@ -1,0 +1,11 @@
+{
+  "name": "my-tools",
+  "owner": { "name": "dissolveyo" },
+  "plugins": [
+    {
+      "name": "summarizer",
+      "source": "./",
+      "description": "Commands and agents for summarizing."
+    }
+  ]
+}
