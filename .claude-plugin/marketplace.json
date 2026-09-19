@@ -1,0 +1,7 @@
+{
+"name": "my-marketplace",
+"owner": {"name":"Josef Berman"},
+"plugins":[
+{"name": "qa-kit", "source": "./", "description": "my first plugin"}
+]
+}
