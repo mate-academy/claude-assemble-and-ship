@@ -4,3 +4,4 @@ node_modules/
 
 # Personal, machine-local Claude settings (committed plugin files stay tracked)
 .claude/settings.local.json
+backup/
