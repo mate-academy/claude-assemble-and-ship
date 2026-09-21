@@ -1,0 +1,7 @@
+{
+  "name": "MarSpace",
+  "owner": { "name": "LZs" },
+  "plugins": [
+    { "name": "qa-kit", "source": "./", "description": "Commands and agents for code review and summarizer" }
+  ]
+}
