@@ -1,0 +1,5 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "A small QA toolkit for reviewing your work. Includes a read-only code-reviewer agent that flags bugs and unclear names by severity, and a /summarize-changes command that produces a PR-ready summary of the current branch."
+}
