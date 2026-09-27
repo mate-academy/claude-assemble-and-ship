@@ -36,3 +36,5 @@ A small Claude Code plugin for wrapping up a branch: summarize what changed, and
 3. Trigger the subagent by asking Claude to review your recent changes — it should reach for `code-reviewer`.
 4. After making edits to the plugin, run `/reload-plugins` to pick up the changes.
 
+Both components are namespaced under `qa-kit` once the plugin is loaded.
+
