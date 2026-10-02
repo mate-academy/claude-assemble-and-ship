@@ -1,0 +1,13 @@
+{
+  "name": "qa-kit-marketplace",
+  "owner": {
+    "name": "Indira Buana"
+  },
+  "plugins": [
+    {
+      "name": "qa-kit",
+      "source": "./",
+      "description": "QA helpers: a command that summarizes branch changes and a subagent that reviews recent code."
+    }
+  ]
+}
