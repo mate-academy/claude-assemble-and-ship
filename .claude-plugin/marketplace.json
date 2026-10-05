@@ -1,0 +1,14 @@
+{
+  "name": "claude-assemble-and-ship",
+  "owner": {
+    "name": "Iryna Knyzh"
+  },
+  "plugins": [
+    {
+      "name": "qa-kit",
+      "source": "./",
+      "description": "Summarise branch changes and review recent code with a dedicated subagent.",
+      "version": "0.1.0"
+    }
+  ]
+}
