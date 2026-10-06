@@ -29,7 +29,7 @@ After editing any component, run `/reload-plugins` to pick up the change without
 ```
 .
 ├── .claude-plugin/
-│   └── plugin.json            # manifest: name + version
+│   └── plugin.json            # manifest: name, version, description, author
 ├── commands/
 │   └── summarize-changes.md   # slash command
 ├── agents/
