@@ -1,0 +1,8 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "Small QA helpers for Claude Code: summarise a branch's changes and review recent code.",
+  "author": {
+    "name": "Brokkoliii"
+  }
+}
