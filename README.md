@@ -7,7 +7,7 @@ A small Claude Code plugin with two QA helpers: a slash command that summarises 
 | Component | Type | What it does |
 |---|---|---|
 | `/qa-kit:summarize-changes` | Slash command | Lists every file touched on the current branch with a one-line description of the change — short enough to paste into a pull-request description. |
-| `code-reviewer` | Subagent | Reviews recent changes for bugs, missing error handling and unclear names. Returns a short list grouped by severity (high / medium / low), naming the file and the fix. Read-only (`Read`, `Grep`, `Glob`). |
+| `code-reviewer` | Subagent | Reviews recent changes for bugs, missing error handling and unclear names. Returns a short list grouped by severity (high / medium / low), naming the file and the fix. Finds the changes itself with read-only git commands (`Bash` is limited to `git status` / `diff` / `log` by its instructions), plus `Read`, `Grep`, `Glob`. |
 
 ## Usage
 
