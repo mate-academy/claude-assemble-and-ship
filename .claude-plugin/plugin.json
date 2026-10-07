@@ -1,0 +1,6 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "Summarize branch changes and review code with read-only tools.",
+  "author": { "name": "Wall-E1982" }
+}
