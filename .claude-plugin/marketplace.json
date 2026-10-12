@@ -1,0 +1,13 @@
+{
+  "name": "stas-marketplace",
+  "owner": {
+    "name": "Stanislav Tsapenko"
+  },
+  "plugins": [
+    {
+      "name": "qa-kit",
+      "source": "./",
+      "description": "Summarises branch changes for pull requests and reviews recent code changes with a code-reviewer subagent."
+    }
+  ]
+}
