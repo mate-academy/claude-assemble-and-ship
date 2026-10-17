@@ -1,0 +1,5 @@
+{
+  "name": "dev-toolkit",
+  "description": "Code review agent and PR-summary command for everyday dev workflows",
+  "version": "0.1.0"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "claude-assemble-and-ship",
+  "owner": {
+    "name": "flazizi",
+    "email": "lazizi.faouzi@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "dev-toolkit",
+      "source": "./",
+      "description": "Code review agent and PR-summary command for everyday dev workflows",
+      "version": "0.1.0"
+    }
+  ]
+}
