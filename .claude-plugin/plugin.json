@@ -1,0 +1,8 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "A slash command that summarises branch changes and a subagent that reviews recent code changes.",
+  "author": {
+    "name": "Reza Paramarta"
+  }
+}
