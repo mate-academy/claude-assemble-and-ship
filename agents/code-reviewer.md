@@ -1,6 +1,6 @@
 ---
 name: code-reviewer
-description: Reviews changed code for bugs and unclear names. Use right after writing or editing code.
+description: Reviews recent code changes for bugs, missing error handling, and unclear names. Use whenever the user asks to review their changes, recent changes, a diff, or a branch, and right after writing or editing code. Pass it the list of changed files (or the diff) to review.
 tools: Read, Grep, Glob
 model: sonnet
 ---

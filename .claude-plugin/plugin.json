@@ -1,0 +1,5 @@
+{
+  "name": "change-kit",
+  "version": "0.1.0",
+  "description": "Summarize what changed on a branch and review it with a dedicated subagent."
+}
