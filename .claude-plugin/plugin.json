@@ -1,0 +1,9 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "QA toolkit: a code-reviewer agent and a summarize-changes command.",
+  "author": {
+    "name": "Lin",
+    "email": "linmaweb@gmail.com"
+  }
+}
