@@ -1,0 +1,5 @@
+{
+  "name": "pr-helper",
+  "version": "0.1.0",
+  "description": "Summarize branch changes for a pull request and review recent code changes with a subagent."
+}
