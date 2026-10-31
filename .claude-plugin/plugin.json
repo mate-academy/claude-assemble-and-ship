@@ -1,0 +1,8 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "A small QA toolkit: summarise the changes on a branch and get a focused code review from a dedicated subagent.",
+  "author": { "name": "Volodymyr Isaiev" },
+  "repository": "https://github.com/GoVolodya/claude-assemble-and-ship",
+  "keywords": ["review", "pull-request", "summary", "qa"]
+}

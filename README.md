@@ -1,48 +1,44 @@
-## Build your first plugin
- 
-This is your workspace for the **Unit 9, Lesson 3** task: assemble a couple of components into a working Claude Code plugin and test it locally.
- 
-### What's in here
- 
-Two ready-made components live in `building-blocks/`:
- 
-- `summarize-changes.md` — a slash command that summarises what changed on a branch
-- `code-reviewer.md` — a subagent that reviews recent changes
-Your job is to organise them into a proper plugin. (Made your own command or subagent earlier in the course? Use those instead — the steps are the same.)
- 
-### Target structure
- 
+# qa-kit
+
+A small Claude Code plugin for the last step before a pull request: see what changed, then get it reviewed.
+
+## What it adds
+
+| Component | Type | What it does |
+|---|---|---|
+| `/qa-kit:summarize-changes [base]` | Slash command | Lists every file touched on the current branch (compared with `base`, default `main`, plus uncommitted work), with a one-line description of each change. It's short enough to paste into a PR description. |
+| `code-reviewer` | Subagent | Reviews recent changes for bugs, missing error handling and unclear names. It returns findings grouped by severity (high / medium / low), each with the file and a one-sentence fix. It covers uncommitted work, untracked files and the branch's commits, It has no Edit or Write tools and is told to run only read-only git commands (`status`, `diff`, `log`, `show`). Any other shell command still goes through your normal permission prompts. It runs on Sonnet. |
+
+## Usage
+
+Load the plugin from this repo's root:
+
+```bash
+claude --plugin-dir .
+```
+
+Then:
+
+- **Summarise a branch:** run `/qa-kit:summarize-changes`, or `/qa-kit:summarize-changes develop` to compare against another base.
+- **Get a review:** ask in plain words, e.g. *"review my recent changes"*. Claude hands the work to the `code-reviewer` subagent. You can also name it: *"use the code-reviewer agent on src/"*.
+
+After editing any plugin file, run `/reload-plugins` to pick up the change.
+
+## Structure
+
 ```
 .
 ├── .claude-plugin/
-│   └── plugin.json            # name + version (the manifest)
+│   └── plugin.json          # manifest: name, version, description
 ├── commands/
 │   └── summarize-changes.md
 ├── agents/
 │   └── code-reviewer.md
-└── README.md                  # what your plugin does
+└── README.md
 ```
- 
-Remember the one rule that trips people up: **only `plugin.json` goes inside `.claude-plugin/`** — the component folders sit at the root.
- 
-### Steps
- 
-1. Create `.claude-plugin/plugin.json` with a `name` and a `version`. A minimal one looks like:
-```json
-   { "name": "qa-kit", "version": "0.1.0" }
-```
-2. Make the component folders and move the pieces into place: `building-blocks/summarize-changes.md` → `commands/`, and `building-blocks/code-reviewer.md` → `agents/`. Delete the empty `building-blocks/` folder afterwards.
-3. If a component runs a bundled script, reference it through `${CLAUDE_PLUGIN_ROOT}` — never a hardcoded path.
-4. Replace this README with one that describes *your* plugin: what it does, the commands it adds, how to use them.
-5. From the repo root, load it with `claude --plugin-dir .`. Run the command as `/your-plugin:summarize-changes`, and trigger the subagent by asking Claude to review your recent changes (it should reach for `code-reviewer`). Use `/reload-plugins` after edits.
-6. Commit and push.
-7. Open a pull request from your fork into `mate-academy/claude-assemble-and-ship` (base: `main`). Check that the base repository is `mate-academy`, not your own fork. The review starts automatically, and the task is marked as done on the platform once it passes.
 
-### How you'll know it's done
- 
-This repo has an automated check — **Validate plugin** — that runs every time you push. It's **red right now**, because there's no plugin yet. As you build, commit and push your work; the check turns **green** once the plugin is structured correctly:
- 
-- `.claude-plugin/plugin.json` exists, is valid JSON, and has a `name`
-- the component folders sit at the root, not inside `.claude-plugin/`
-- at least one component is present
-A green check means the structure is right. To confirm it actually *works*, load the plugin locally with `claude --plugin-dir .` and run each piece — the command by its namespaced name, the subagent by asking for a review.
+Only `plugin.json` lives in `.claude-plugin/`; the component folders sit at the root. Neither component runs a bundled script, so no paths need `${CLAUDE_PLUGIN_ROOT}`.
+
+## Checks
+
+The **Validate plugin** workflow (`.github/workflows/validate.yml`) runs on every push and pull request. It confirms the manifest is valid and has a `name`, that the component folders are at the root, and that at least one component exists.
