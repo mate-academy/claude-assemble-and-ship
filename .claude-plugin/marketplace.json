@@ -1,0 +1,13 @@
+{
+  "name": "ybushnag-tools",
+  "owner": {
+    "name": "Yasser Bushnag"
+  },
+  "plugins": [
+    {
+      "name": "qa-kit",
+      "source": "./",
+      "description": "Git change summaries and code reviews."
+    }
+  ]
+}
