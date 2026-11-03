@@ -1,0 +1,5 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "Summarize recent changes and review them for bugs before a commit or PR."
+}
