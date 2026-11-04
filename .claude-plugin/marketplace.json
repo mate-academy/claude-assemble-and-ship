@@ -1,0 +1,13 @@
+{
+  "name": "chris-marketplace",
+  "owner": {
+    "name": "Chris Barber"
+  },
+  "plugins": [
+    {
+      "name": "qa-kit",
+      "source": "./",
+      "description": "Summarize branch changes and review recent code"
+    }
+  ]
+}
