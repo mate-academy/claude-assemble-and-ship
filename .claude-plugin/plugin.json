@@ -1,0 +1,7 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "A summarize-changes slash command and a code-reviewer subagent.",
+  "author": { "name": "akennich" },
+  "license": "MIT"
+}
