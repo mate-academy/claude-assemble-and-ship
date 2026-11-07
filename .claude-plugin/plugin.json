@@ -1,0 +1,5 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "A slash command that summarises branch changes and a code-reviewer subagent."
+}
