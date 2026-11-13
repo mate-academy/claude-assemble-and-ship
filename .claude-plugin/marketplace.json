@@ -1,0 +1,7 @@
+{
+	"name": "toni-tools",
+	"owner": { "name": "Toni" },
+	"plugins": [
+			{ "name": "qa-kit", "source": "./", "description": "Commands and Agents for qa-kit plugin" }
+		   ]
+}
