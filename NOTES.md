@@ -4,8 +4,8 @@
 
 `qa-kit` is a Claude Code plugin for wrapping up a branch before a pull request. It adds:
 
-- `/qa-kit:ship-check`: the one-word workflow. It reviews the branch, fills test gaps, writes regression tests for real bugs, and returns a PR-ready report with a verdict.
-- `/qa-kit:summarize-changes`: a per-file, one-line summary of the branch.
+- `/qa-kit:ship`: the one-word workflow. It reviews the branch, fills test gaps, writes regression tests for real bugs, and returns a PR-ready report with a verdict.
+- `/qa-kit:summarize`: a per-file, one-line summary of the branch.
 - `qa-kit:code-reviewer` and `qa-kit:test-writer`: the two subagents the workflow drives.
 - `qa-kit:pr-description`: a skill that drafts a PR description when you ask for one.
 - A `PostToolUse` hook that scans every file Claude writes or edits for hard-coded secrets and tells Claude to remove them.
@@ -31,7 +31,7 @@ Why:
 
 Both agents use `sonnet`. Spotting bugs needs real judgment, and writing correct tests is moderately hard, so the cheapest model seemed too risky for either. I did not add a cheaper `haiku` agent because no job in the plugin is mechanical enough to need one.
 
-## Parallel versus sequential steps in `ship-check`
+## Parallel versus sequential steps in `ship`
 
 | Step | Mode | Why |
 |------|------|-----|
