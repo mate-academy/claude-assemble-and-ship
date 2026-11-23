@@ -1,0 +1,5 @@
+{
+  "name": "qa-kit",
+  "version": "0.1.0",
+  "description": "A small QA kit for Claude Code: a command that summarises branch changes and a subagent that reviews recent code changes."
+}
