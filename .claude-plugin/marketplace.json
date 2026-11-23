@@ -1,0 +1,7 @@
+{
+  "name": "my-tools",
+  "owner": { "name": "Sergi" },
+  "plugins": [
+    { "name": "qa-kit", "source": "./", "description": "Quick QA helpers: summarise branch changes for a PR and review recent code changes." }
+  ]
+}
