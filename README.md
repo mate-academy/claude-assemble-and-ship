@@ -1,48 +1,56 @@
-## Build your first plugin
- 
-This is your workspace for the **Unit 9, Lesson 3** task: assemble a couple of components into a working Claude Code plugin and test it locally.
- 
-### What's in here
- 
-Two ready-made components live in `building-blocks/`:
- 
-- `summarize-changes.md` — a slash command that summarises what changed on a branch
-- `code-reviewer.md` — a subagent that reviews recent changes
-Your job is to organise them into a proper plugin. (Made your own command or subagent earlier in the course? Use those instead — the steps are the same.)
- 
-### Target structure
- 
+# qa-kit
+
+A small Claude Code plugin for QA and code-review helpers. It bundles:
+
+- **`/qa-kit:summarize-changes`** — a slash command that summarises the changes on the current branch, file by file, in four groups: commits relative to `main`, staged, unstaged and untracked files. It is short enough to paste into a pull-request description.
+- **`code-reviewer`** — a subagent that reviews recently changed code for bugs, missing error handling and unclear names, and returns findings grouped by severity (high, medium, low).
+
+## Layout
+
 ```
 .
 ├── .claude-plugin/
-│   └── plugin.json            # name + version (the manifest)
+│   └── plugin.json            # plugin manifest (name, version)
 ├── commands/
-│   └── summarize-changes.md
+│   └── summarize-changes.md   # /qa-kit:summarize-changes
 ├── agents/
-│   └── code-reviewer.md
-└── README.md                  # what your plugin does
+│   └── code-reviewer.md       # code-reviewer subagent
+└── README.md
 ```
- 
-Remember the one rule that trips people up: **only `plugin.json` goes inside `.claude-plugin/`** — the component folders sit at the root.
- 
-### Steps
- 
-1. Create `.claude-plugin/plugin.json` with a `name` and a `version`. A minimal one looks like:
-```json
-   { "name": "qa-kit", "version": "0.1.0" }
-```
-2. Make the component folders and move the pieces into place: `building-blocks/summarize-changes.md` → `commands/`, and `building-blocks/code-reviewer.md` → `agents/`. Delete the empty `building-blocks/` folder afterwards.
-3. If a component runs a bundled script, reference it through `${CLAUDE_PLUGIN_ROOT}` — never a hardcoded path.
-4. Replace this README with one that describes *your* plugin: what it does, the commands it adds, how to use them.
-5. From the repo root, load it with `claude --plugin-dir .`. Run the command as `/your-plugin:summarize-changes`, and trigger the subagent by asking Claude to review your recent changes (it should reach for `code-reviewer`). Use `/reload-plugins` after edits.
-6. Commit and push.
-7. Open a pull request from your fork into `mate-academy/claude-assemble-and-ship` (base: `main`). Check that the base repository is `mate-academy`, not your own fork. The review starts automatically, and the task is marked as done on the platform once it passes.
 
-### How you'll know it's done
- 
-This repo has an automated check — **Validate plugin** — that runs every time you push. It's **red right now**, because there's no plugin yet. As you build, commit and push your work; the check turns **green** once the plugin is structured correctly:
- 
-- `.claude-plugin/plugin.json` exists, is valid JSON, and has a `name`
-- the component folders sit at the root, not inside `.claude-plugin/`
-- at least one component is present
-A green check means the structure is right. To confirm it actually *works*, load the plugin locally with `claude --plugin-dir .` and run each piece — the command by its namespaced name, the subagent by asking for a review.
+## Installation (local load)
+
+The plugin is not published to a marketplace. Load it from a local copy of this repository:
+
+```bash
+claude --plugin-dir /path/to/claude-assemble-and-ship
+```
+
+Run `/reload-plugins` inside Claude Code after you edit any plugin file.
+
+## Usage
+
+### Summarise changes
+
+Run the slash command from inside a git repository, on the branch you want to describe:
+
+```
+/qa-kit:summarize-changes
+```
+
+If the repository has no `main` branch, the command says so and skips the commits-vs-`main` group.
+
+### Review recent changes
+
+The `code-reviewer` subagent is triggered by asking Claude for a review, for example:
+
+```
+Review my recent changes for bugs and unclear names.
+```
+
+The calling Claude collects the diff and the list of changed files for both the staged and the unstaged changes (for example with `git diff --cached`, `git diff`, `git diff --cached --name-status` and `git diff --name-status`), then delegates the review to `code-reviewer`. The agent has no Bash access (tools: Read, Grep, Glob), so it cannot run git itself. If the diff or the file list is missing, it returns a short message listing what is missing instead of reviewing. Otherwise it reads and searches the surrounding code and returns a short, severity-grouped list.
+
+## Requirements
+
+- Claude Code with plugin support
+- A git repository for `/qa-kit:summarize-changes`
