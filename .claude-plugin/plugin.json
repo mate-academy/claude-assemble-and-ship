@@ -1,0 +1,5 @@
+{
+  "name": "review-kit",
+  "version": "0.1.0",
+  "description": "Summarise a branch's changes and review them before opening a pull request."
+}
